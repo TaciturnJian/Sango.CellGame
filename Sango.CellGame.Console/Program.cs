@@ -101,6 +101,7 @@ static int ParseInt(string valueName)
         while (!int.TryParse(input, out result))
         {
             $"Error when parsing input({input}) for value({valueName})\n please try again\n>>> ".Print();
+            input = Console.ReadLine();
         }
     }
 

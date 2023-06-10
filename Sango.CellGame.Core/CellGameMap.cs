@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Sango.CellGame.Core
+﻿namespace Sango.CellGame.Core
 {
     public class CellGameMap
     {
@@ -101,7 +99,7 @@ namespace Sango.CellGame.Core
                 return false;
             }
 
-            int count = CalculateCellCountAround(position);
+            var count = CalculateCellCountAround(position);
             if (count != 0)
             {
                 Console.WriteLine($"({position.X},{position.Y}): {count}");

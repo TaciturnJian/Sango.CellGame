@@ -14,15 +14,12 @@ var fileList = new List<string>()
     "bin/Sango.CellGame.Core.pdb"
 };
 
-bool success = true;
+var success = true;
 
-foreach (var file in fileList)
+foreach (var file in fileList.Where(file => !File.Exists(Path.Combine(file))))
 {
-    if (!File.Exists(Path.Combine(file)))
-    {
-        Console.WriteLine($"ERROR: 目标文件({file})不存在！");
-        success = false;
-    }
+    Console.WriteLine($"ERROR: 目标文件({file})不存在！");
+    success = false;
 }
 
 if (!success)
